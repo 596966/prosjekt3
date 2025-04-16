@@ -4,12 +4,8 @@ package no.hvl.dat110.unit.tests;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -118,18 +114,23 @@ class TestMutex {
 			return reply;
 		}
 	}
-	
+
 	private Message getPeerMessage(Set<Message> activenodes, String peer) {
-		
-		Message pmsg = null;
-		Iterator<Message> it = activenodes.iterator();
-		while(it.hasNext()) {
-			Message n = it.next();
-			if(n.getNodeName().equals(peer))
-				return n;
+		if (activenodes == null || peer == null) {
+			throw new IllegalArgumentException("Parameters cannot be null");
 		}
-		
-		return pmsg;
+
+		return activenodes.stream()
+				.filter(Objects::nonNull)
+				.filter(m -> peer.equals(m.getNodeName()))
+				.findFirst()
+				.orElseThrow(() -> new IllegalStateException(
+						"Peer " + peer + " not found in active nodes. Available peers: " +
+								activenodes.stream()
+										.filter(Objects::nonNull)
+										.map(Message::getNodeName)
+										.collect(Collectors.toList())
+				));
 	}
 
 }
