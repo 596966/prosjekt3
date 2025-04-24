@@ -28,16 +28,25 @@ public class Util {
 	 * @return true if id is in (lower, upper], false otherwise
 	 */
 	public static boolean checkInterval(BigInteger id, BigInteger lower, BigInteger upper) {
-		// If lower < upper (normal case)
-		if (lower.compareTo(upper) < 0) {
+		// Null checks
+		if (id == null || lower == null || upper == null) {
+			throw new IllegalArgumentException("Inputs cannot be null");
+		}
+
+		int cmpLowerUpper = lower.compareTo(upper);
+
+		// Case 1: Normal interval (lower < upper)
+		if (cmpLowerUpper < 0) {
 			return id.compareTo(lower) > 0 && id.compareTo(upper) <= 0;
 		}
-		// If lower > upper (wrapped around case)
-		else if (lower.compareTo(upper) > 0) {
+		// Case 2: Wrapped interval (lower > upper)
+		else if (cmpLowerUpper > 0) {
 			return id.compareTo(lower) > 0 || id.compareTo(upper) <= 0;
 		}
-		// If lower == upper (only possible if ring has 1 node)
-		return true;
+		// Case 3: Degenerate interval (lower == upper, full ring)
+		else {
+			return true;
+		}
 	}
 
 	public static List<String> toString(List<NodeInterface> list) throws RemoteException {
