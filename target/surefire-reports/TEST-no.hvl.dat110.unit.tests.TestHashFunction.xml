@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="no.hvl.dat110.unit.tests.TestHashFunction" time="0.004" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="no.hvl.dat110.unit.tests.TestHashFunction" time="0.006" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/opt/java14/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire/surefirebooter-20250416151840389_3.jar /mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire 2025-04-16T15-18-39_946-jvmRun1 surefire-20250416151840389_1tmp surefire_0-20250416151840389_2tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire/surefirebooter-20250424185657608_3.jar /mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire 2025-04-24T18-56-56_840-jvmRun1 surefire-20250424185657608_1tmp surefire_0-20250424185657608_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/test-classes:/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/classes:/home/dhav/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/dhav/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/dhav/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/home/dhav/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/dhav/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/home/dhav/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire/surefirebooter-20250416151840389_3.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/xdani/IdeaProjects/dat110-project3-dht-startcode/target/surefire/surefirebooter-20250424185657608_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+13"/>
     <property name="user.name" value="dhav"/>
@@ -50,24 +50,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="testAddressSize" classname="no.hvl.dat110.unit.tests.TestHashFunction" time="0.001">
-    <system-out><![CDATA[2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 70: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 71: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 72: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 73: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 74: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 75: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 76: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 77: process1
-]]></system-out>
-  </testcase>
-  <testcase name="testHashOf" classname="no.hvl.dat110.unit.tests.TestHashFunction" time="0.002">
-    <system-out><![CDATA[2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 78: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 79: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 80: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 81: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 82: process1
-2025-04-16 15:19:06 INFO  ChordProtocols:167 - Finger table entry 83: process1
-]]></system-out>
-  </testcase>
+  <testcase name="testAddressSize" classname="no.hvl.dat110.unit.tests.TestHashFunction" time="0.002"/>
+  <testcase name="testHashOf" classname="no.hvl.dat110.unit.tests.TestHashFunction" time="0.002"/>
 </testsuite>

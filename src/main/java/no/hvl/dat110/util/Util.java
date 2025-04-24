@@ -33,17 +33,17 @@ public class Util {
 			throw new IllegalArgumentException("Inputs cannot be null");
 		}
 
-		int cmpLowerUpper = lower.compareTo(upper);
+		int cmp = lower.compareTo(upper);
 
-		// Case 1: Normal interval (lower < upper)
-		if (cmpLowerUpper < 0) {
-			return id.compareTo(lower) > 0 && id.compareTo(upper) <= 0;
+		// Case 1: Normal interval [lower, upper)
+		if (cmp < 0) {
+			return id.compareTo(lower) >= 0 && id.compareTo(upper) < 0;
 		}
-		// Case 2: Wrapped interval (lower > upper)
-		else if (cmpLowerUpper > 0) {
-			return id.compareTo(lower) > 0 || id.compareTo(upper) <= 0;
+		// Case 2: Wrapped interval [lower, MAX_VALUE] OR [0, upper)
+		else if (cmp > 0) {
+			return id.compareTo(lower) >= 0 || id.compareTo(upper) <= 0;
 		}
-		// Case 3: Degenerate interval (lower == upper, full ring)
+		// Case 3: Degenerate interval (lower == upper, covers entire ring)
 		else {
 			return true;
 		}
